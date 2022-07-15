@@ -1,3 +1,11 @@
+#---------------------------------------------------------
+#                      Bisection Method
+#---------------------------------------------------------
+
+# Given a continuous function f:[a,b]->R, with f(a)*f(b) <= 0, 
+# this program, using the bisection method, returns a real root 
+# (or an approximate real root) for f, with maximum absolute error given by tol.
+
 import math
 import numpy
 
@@ -11,7 +19,7 @@ def bisection(f,a,b,tol):
     elif numpy.sign(f(a)) == numpy.sign(f(b)):
         return('The function has no root in the range')
     else:
-        n = int(math.ceil(math.log((b-a)/tol)/math.log(2)))+1     #associated with the theoretical estimate numberof iterations
+        n = int(math.ceil(math.log((b-a)/tol)/math.log(2)))+1    
         i = 1                                                    
         while i <= n:
             p = (a+b)/2
